@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>SPAR2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+          <div class="col-md-4 col-md-8"></div>
+          <div class="col-md-4 col-md-4">
+              <div class="navbar-header">
+                <a href="index.html">SUBJECT 1</a>
+                <a href="index2.html">SUBJECT 2</a>
+                <a href="index5.html">SUBJECT 5</a>
+                <a href="index8.html">SUBJECT 8</a>
+              </div>
+          </div>
+      </div>
+    </nav>
+    <div class="hero text-center">
+      <h1>Spartan Data Dashboard</h1>
+    </div>
+    <div class="container">
+      
+      <div class="row margin-top-50">
+        <div class="col-md-2">
+          <aside class="filters">
+            <div class="panel panel-default">
+              <div class="panel-heading">SUBJECT 2</div>
+              <div class="panel-body">
+                <img src="static/images/Spartan.png" style="width:100%; height:100%"></img>
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label id="filterType" class="filterType">Enter Parameter</label>
+                        <input class="form-control" id="searchInput" type="text" placeholder="search term">
+                        <button id="searchSubmit" type="searchSubmit" class="btn btn-default searchSubmit">SEARCH</button>
+                      </li>
+                    </ul>
+                  </div>
+                  <select id="selfilter" onchange="getData(this.value)">
+                      <option value="FilterByTimestamp">TimeStamp</option> 
+                      <option value="FilterByActivity">Activity</option> 
+                      <option value="FilterByHeartRate">HeartRate</option>
+                      <option value="FilterByTemperature">Temperature</option> 
+                  </select>
+                </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="col-md-8">
+          <div id="table-area" class="">
+            <table id="ufo-table" class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="table-head">Timestamp</th>
+                  <th class="table-head">Subject</th>
+                  <th class="table-head">Activity</th>
+                  <th class="table-head">HeartRate</th>
+                  <th class="table-head">Temperature</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <msg-box></msg-box>
+          <table id="ActionImage" class="table table-striped">
+            <tbody>
+                <tr>
+                  <img id="ActionImage" alt="Action" height="250" width="350" src="static/images/proneIdle.gif">
+                </tr>
+                <tr>
+                    <a href="https://public.tableau.com/profile/robbie.phillips#!/vizhome/Sub2_AvgHRbyActivity/Sub2_AvgHRbyActivity?publish=yes">BIOMETRICS</a> <BR>
+                </tr> 
+                <tr>
+                    <a href="https://public.tableau.com/profile/robbie.phillips#!/vizhome/Sub2_AccelRangebyActivity/Sub2_AccelRangebyActivity?publish=yes">ACCEL DATA</a> <BR>
+                </tr>
+                <tr>
+                    <a href="https://public.tableau.com/profile/robbie.phillips#!/vizhome/Sub2_GyroRangebyActivity/Sub2_GyroRangebyActivity?publish=yes">GYRO DATA</a> <BR>
+                </tr>
+                <tr>
+                    <a href="https://public.tableau.com/profile/robbie.phillips#!/vizhome/Sub2_MagRangebyActivity/Sub2_MagRangebyActivity?publish=yes">MAG DATA</a> <BR>
+                </tr>  
+            </tbody> 
+          </table>
+          
+         <!-- <img id="LyingImage" alt="Lying" height="250" width="350" src="static/images/proneIdle.gif">
+          <img id="SittingImage" alt="Walking" height="250" width="350" src="static/images/SitIdle.gif">
+          <img id="StandingImage" alt="Standing" height="250" width="350" src="static/images/IdleLookAround.gif">
+          <img id="WalkingImage" alt="Walking" height="250" width="350" src="static/images/WalkForward.gif">
+          <img id="RunningImage" alt="Running" height="250" width="350" src="static/images/RunForward.gif">
+          <img id="DodgingImage" alt="Dodging" height="250" width="350" src="static/images/RunAbout.gif">
+          <img id="JumpingImage" alt="Jumping" height="250" width="350" src="static/images/Jump.gif"> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="static/js/subject2data.js"></script>
+  <script src="static/js/app.js"></script>
+</body>
+
+</html>
